@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RM CAHAYA Masakan Padang — Sodong, Tigaraksa</title>
+    <meta name="description" content="Rumah Makan CAHAYA Masakan Padang di Sodong, Tigaraksa. Sedia Rendang, Ayam Bakar, Gulai Cincang, dan Nasi Kotak. Bisa makan di tempat, bungkus, atau pesan antar.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Fraunces"', 'serif'],
+                    },
+                    colors: {
+                        kertas: {
+                            utama: '#F4EFE6',
+                            sekunder: '#EAE2D3',
+                            kartu: '#FBF8F1',
+                            garis: '#CFC6B8',
+                            garisGelap: '#A89E8E',
+                        },
+                        tinta: {
+                            utama: '#181512',
+                            sekunder: '#575047',
+                            redup: '#7D7468',
+                        },
+                        minang: {
+                            cabai: '#B91C1C',
+                            cabaiGelap: '#8F1414',
+                            daun: '#1F4E3D',
+                            daunGelap: '#14362A',
+                            kunyit: '#C27803',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Tekstur kertas menu fisik yang halus tanpa efek blur dekoratif */
+        body {
+            background-color: #F4EFE6;
+            color: #181512;
+            font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+        }
+
+        .tabular-harga {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Garis pemisah klasik buku menu */
+        .menu-leader {
+            border-bottom: 1px dotted #B8AE9E;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #EAE2D3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #B8AE9E;
+            border-radius: 2px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8C8273;
+        }
+
+        @keyframes stampIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-stamp {
+            animation: stampIn 0.22s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-kertas-utama text-tinta-utama font-sans antialiased selection:bg-minang-cabai selection:text-white overflow-x-hidden">
+
+    <!-- ==================== PITA STATUS WARUNG ATAS ==================== -->
+    <div class="bg-tinta-utama text-kertas-utama border-b border-tinta-utama">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2 text-[11px] sm:text-xs">
+            <div class="flex items-center gap-2.5">
+                <span class="inline-block w-2 h-2 bg-amber-400"></span>
+                <span class="font-medium tracking-wide">Sodong, Kec. Tigaraksa • Parkir Luas &amp; Gratis</span>
+            </div>
+            <div class="flex items-center gap-4 text-kertas-sekunder">
+                <span class="hidden sm:inline">4,9 ★ Star Resto ShopeeFood</span>
+                <span class="font-semibold text-amber-300 tabular-harga">WA: 0821-2832-5210</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== BILAH NAVIGASI UTAMA ==================== -->
+    <header class="sticky top-0 z-40 bg-kertas-utama/95 backdrop-blur-xs border-b border-kertas-garis">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-[72px] gap-4">
+                <!-- Identitas Rumah Makan -->
+                <a href="#beranda" class="flex items-center gap-3 min-w-0 group">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 bg-minang-cabai text-kertas-kartu border border-tinta-utama flex items-center justify-center shrink-0">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+                            <path d="M2 8c2.5 3 6 4 10 4s7.5-1 10-4c-1.5 4.5-3 7-3 11H5c0-4-1.5-6.5-3-11z"/>
+                            <path d="M12 3v9"/>
+                        </svg>
+                    </div>
+                    <div class="min-w-0">
+                        <span class="block font-serif font-extrabold text-lg sm:text-xl tracking-tight text-tinta-utama leading-none truncate">
+                            RM CAHAYA
+                        </span>
+                        <span class="block text-[11px] font-medium text-tinta-sekunder mt-1 truncate">
+                            Masakan Padang • Sodong
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Navigasi Layar Lebar -->
+                <nav class="hidden md:flex items-center space-x-7">
+                    <a href="#beranda" class="text-xs uppercase tracking-wider font-semibold text-tinta-sekunder hover:text-minang-cabai transition-colors">Beranda</a>
+                    <a href="#cerita" class="text-xs uppercase tracking-wider font-semibold text-tinta-sekunder hover:text-minang-cabai transition-colors">Dapur Kami</a>
+                    <a href="#menu" class="text-xs uppercase tracking-wider font-semibold text-tinta-sekunder hover:text-minang-cabai transition-colors">Daftar Menu</a>
+                    <a href="#ulasan" class="text-xs uppercase tracking-wider font-semibold text-tinta-sekunder hover:text-minang-cabai transition-colors">Ulasan</a>
+                    <a href="#lokasi" class="text-xs uppercase tracking-wider font-semibold text-tinta-sekunder hover:text-minang-cabai transition-colors">Lokasi</a>
+                </nav>
+
+                <!-- Tombol Keranjang -->
+                <div class="flex items-center shrink-0">
+                    <button type="button" onclick="toggleCartDrawer()" aria-label="Buka Catatan Pesanan" class="inline-flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 bg-kertas-kartu hover:bg-tinta-utama text-tinta-utama hover:text-kertas-kartu border border-tinta-utama transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="square" stroke-linejoin="miter" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                        </svg>
+                        <span class="text-xs sm:text-sm font-bold">Bon Pesanan</span>
+                        <span id="nav-cart-badge" class="hidden bg-minang-cabai text-white text-[11px] font-bold min-w-[20px] h-5 px-1.5 flex items-center justify-center tabular-harga">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO EDITORIAL ASIMETRIS ==================== -->
+    <section id="beranda" class="border-b border-kertas-garis">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+                
+                <!-- Kolom Kiri (7 Kolom): Tipografi Besar & Tombol Langsung -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 border border-tinta-utama bg-kertas-kartu px-3 py-1 text-xs font-bold uppercase tracking-wider text-minang-cabai">
+                        <span>Buka Setiap Hari</span>
+                        <span class="text-kertas-garisGelap">•</span>
+                        <span class="text-tinta-utama">Makan di Tempat &amp; Pesan Antar</span>
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-[58px] font-extrabold leading-[1.08] tracking-tight text-tinta-utama">
+                        Masakan Padang Asli, Bumbu Medok &amp; Porsi Bikin Kenyang.
+                    </h1>
+
+                    <p class="text-sm sm:text-base text-tinta-sekunder max-w-xl leading-relaxed">
+                        Singgah ke <strong>RM CAHAYA Masakan Padang - Sodong</strong> di Tigaraksa atau pesan langsung dari rumah. Semua lauk dimasak baru tiap pagi lengkap dengan gulai nangka, daun singkong, dan sambal cabai hijau maupun merah.
+                    </p>
+
+                    <!-- Tombol Aksi Utama (Sudut Tegas Bergaya Cetak) -->
+                    <div class="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 pt-2">
+                        <a href="#menu" class="inline-flex items-center justify-center gap-2 bg-minang-cabai hover:bg-minang-cabaiGelap text-white font-bold text-sm px-6 py-3.5 border border-tinta-utama transition-colors">
+                            <span>Buka Daftar Menu (36)</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                <path stroke-linecap="square" stroke-linejoin="miter" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+
+                        <a href="https://wa.me/6282128325210?text=Halo%20RM%20Cahaya%20Masakan%20Padang%20Sodong%2C%20saya%20mau%20pesan%20makan." 
+                           onclick="return bukaTautanLuar(event, this.href)"
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="inline-flex items-center justify-center gap-2 bg-minang-daun hover:bg-minang-daunGelap text-white font-bold text-sm px-6 py-3.5 border border-tinta-utama transition-colors">
+                            <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                            </svg>
+                            <span>Chat WhatsApp</span>
+                        </a>
+
+                        <button type="button" 
+                           onclick="bukaModalShopeeFood()"
+                           class="inline-flex items-center justify-center gap-2 bg-kertas-kartu hover:bg-kertas-sekunder text-tinta-utama border border-tinta-utama font-bold text-sm px-5 py-3.5 transition-colors cursor-pointer">
+                            <span class="w-2 h-2 bg-orange-600"></span>
+                            <span>ShopeeFood</span>
+                        </button>
+                    </div>
+
+                    <!-- Baris Fakta Singkat -->
+                    <div class="grid grid-cols-3 border-t border-b border-kertas-garis divide-x divide-kertas-garis mt-6">
+                        <div class="py-4 pr-3">
+                            <p class="font-serif text-xl sm:text-2xl font-extrabold text-tinta-utama tabular-harga">4,9 <span class="text-minang-kunyit text-base">★</span></p>
+                            <p class="text-[11px] sm:text-xs text-tinta-sekunder mt-0.5">Nilai Ulasan Online</p>
+                        </div>
+                        <div class="py-4 px-3 sm:px-5">
+                            <p class="font-serif text-xl sm:text-2xl font-extrabold text-tinta-utama tabular-harga">36 Menu</p>
+                            <p class="text-[11px] sm:text-xs text-tinta-sekunder mt-0.5">Lauk &amp; Nasi Kotak</p>
+                        </div>
+                        <div class="py-4 pl-3 sm:pl-5">
+                            <p class="font-serif text-xl sm:text-2xl font-extrabold text-tinta-utama tabular-harga">Rp 18rb</p>
+                            <p class="text-[11px] sm:text-xs text-tinta-sekunder mt-0.5">Paket Nasi Komplit</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan (5 Kolom): Lembar Bon Menu Andalan (Tanpa Rotasi/Bayangan Palsu) -->
+                <div class="lg:col-span-5">
+                    <div class="bg-kertas-kartu border border-tinta-utama">
+                        <!-- Kepala Bon -->
+                        <div class="px-5 py-4 bg-tinta-utama text-kertas-kartu flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-amber-300">Paling Sering Dipesan</span>
+                                <h2 class="font-serif text-lg sm:text-xl font-bold mt-0.5">Lauk Andalan Hari Ini</h2>
+                            </div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider border border-kertas-kartu/40 px-2.5 py-1">100% Halal</span>
+                        </div>
+
+                        <!-- Isi Daftar Menu Andalan -->
+                        <div class="p-5 sm:p-6 divide-y divide-kertas-garis">
+                            <div class="py-4 first:pt-0 flex items-start justify-between gap-4">
+                                <div class="space-y-1">
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <p class="font-serif font-bold text-base text-tinta-utama">Rendang + Nasi</p>
+                                        <span class="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 bg-minang-cabai text-white">Terlaris</span>
+                                    </div>
+                                    <p class="text-xs text-tinta-sekunder leading-relaxed">Rendang daging sapi empuk, sayur gulai nangka, daun singkong &amp; sambal.</p>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <span class="block font-bold text-sm text-tinta-utama tabular-harga">Rp 25.000</span>
+                                    <button type="button" onclick="updateCart('rendang-nasi', 1)" class="mt-1.5 inline-block text-xs font-bold text-minang-cabai hover:text-tinta-utama border-b border-minang-cabai hover:border-tinta-utama transition-colors">+ Tambah</button>
+                                </div>
+                            </div>
+
+                            <div class="py-4 flex items-start justify-between gap-4">
+                                <div class="space-y-1">
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <p class="font-serif font-bold text-base text-tinta-utama">Ayam Bakar + Nasi</p>
+                                        <span class="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 border border-tinta-utama text-tinta-utama">Favorit</span>
+                                    </div>
+                                    <p class="text-xs text-tinta-sekunder leading-relaxed">Ayam bakar bumbu Padang meresap + nasi hangat &amp; sayur komplit.</p>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <span class="block font-bold text-sm text-tinta-utama tabular-harga">Rp 18.000</span>
+                                    <button type="button" onclick="updateCart('ayam-bakar-nasi', 1)" class="mt-1.5 inline-block text-xs font-bold text-minang-cabai hover:text-tinta-utama border-b border-minang-cabai hover:border-tinta-utama transition-colors">+ Tambah</button>
+                                </div>
+                            </div>
+
+                            <div class="py-4 last:pb-0 flex items-start justify-between gap-4">
+                                <div class="space-y-1">
+                                    <p class="font-serif font-bold text-base text-tinta-utama">Ayam Goreng Serundeng + Nasi</p>
+                                    <p class="text-xs text-tinta-sekunder leading-relaxed">Ayam goreng garing tabur serundeng kelapa gurih &amp; sambal.</p>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <span class="block font-bold text-sm text-tinta-utama tabular-harga">Rp 18.000</span>
+                                    <button type="button" onclick="updateCart('ayam-goreng-serundeng-nasi', 1)" class="mt-1.5 inline-block text-xs font-bold text-minang-cabai hover:text-tinta-utama border-b border-minang-cabai hover:border-tinta-utama transition-colors">+ Tambah</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Kaki Bon -->
+                        <div class="px-5 py-3.5 bg-kertas-sekunder border-t border-kertas-garis flex items-center justify-between text-xs">
+                            <span class="text-tinta-sekunder">Harga pesanan online</span>
+                            <a href="#menu" class="font-bold text-tinta-utama hover:text-minang-cabai transition-colors">Lihat semua 36 menu &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DAPUR KAMI (TATA LETAK GARIS EDITORIAL, TANPA KOTAK 01-04) ==================== -->
+    <section id="cerita" class="py-14 sm:py-20 bg-kertas-sekunder/70 border-b border-kertas-garis">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+                <!-- Kolom Kiri -->
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-widest text-minang-cabai">Dapur RM CAHAYA</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-tinta-utama leading-tight">
+                        Masak Baru Setiap Pagi di Sodong
+                    </h2>
+                    <p class="text-sm sm:text-base text-tinta-sekunder leading-relaxed">
+                        Semua lauk di RM CAHAYA dimasak sendiri setiap pagi pakai rempah segar. Kuah gulainya kental, sambalnya pedas pas, dan takaran nasinya pas buat makan siang maupun makan malam.
+                    </p>
+                    <div class="pt-3">
+                        <div class="p-4 bg-kertas-kartu border-l-4 border-minang-daun border-y border-r border-kertas-garis space-y-1">
+                            <p class="font-serif font-bold text-base text-tinta-utama">Bisa Makan di Warung atau Dibungkus</p>
+                            <p class="text-xs sm:text-sm text-tinta-sekunder leading-relaxed">Mau makan langsung di tempat, dibungkus cepat, atau pesan buat acara kantor dan pengajian, semuanya bisa disiapkan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Daftar Keunggulan Bergaris Tegas (Bukan Kartu Kembar) -->
+                <div class="lg:col-span-7 border-t border-tinta-utama divide-y divide-kertas-garis">
+                    <div class="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-6">
+                        <h3 class="font-serif font-bold text-lg text-tinta-utama sm:w-56 shrink-0">Sayur &amp; Kuah Komplit</h3>
+                        <p class="text-xs sm:text-sm text-tinta-sekunder leading-relaxed">
+                            Setiap paket nasi sudah lengkap dengan sayur gulai nangka, daun singkong rebus, siraman kuah gulai, dan sambal.
+                        </p>
+                    </div>
+
+                    <div class="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-6">
+                        <h3 class="font-serif font-bold text-lg text-tinta-utama sm:w-56 shrink-0">Pilihan Lauk Lengkap</h3>
+                        <p class="text-xs sm:text-sm text-tinta-sekunder leading-relaxed">
+                            Mulai dari rendang daging, gulai cincang, aneka olahan ayam bakar dan goreng, sampai ikan tongkol, kembung, dan lele goreng serundeng.
+                        </p>
+                    </div>
+
+                    <div class="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-6">
+                        <h3 class="font-serif font-bold text-lg text-tinta-utama sm:w-56 shrink-0">Sedia Paket Nasi Kotak</h3>
+                        <p class="text-xs sm:text-sm text-tinta-sekunder leading-relaxed">
+                            Tersedia 8 pilihan menu nasi kotak mulai Rp 30.000 dengan kemasan rapi untuk acara rapat, pengajian, maupun hajatan.
+                        </p>
+                    </div>
+
+                    <div class="py-5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-6">
+                        <h3 class="font-serif font-bold text-lg text-tinta-utama sm:w-56 shrink-0">Parkir Luas &amp; Gratis</h3>
+                        <p class="text-xs sm:text-sm text-tinta-sekunder leading-relaxed">
+                            Lokasi di Sodong, Tigaraksa memiliki area parkir depan yang luas dan gratis untuk motor maupun mobil.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LEMBAR DAFTAR MENU & BON PESANAN ==================== -->
+    <section id="menu" class="py-14 sm:py-20 bg-kertas-utama border-b border-kertas-garis">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-tinta-utama mb-8">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-minang-cabai">Daftar Menu Online</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-tinta-utama mt-1">
+                        Pilihan Lauk &amp; Paket Nasi
+                    </h2>
+                </div>
+                <p class="text-tinta-sekunder text-xs sm:text-sm max-w-md">
+                    Tekan <strong>"+ Tambah"</strong> pada menu yang diinginkan. Total harga otomatis dihitung di bon pesanan dan siap dikirim ke WhatsApp.
+                </p>
+            </div>
+
+            <!-- Filter Kategori & Pencarian -->
+            <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-8">
+                <div class="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0">
+                    <button type="button" data-cat="all" onclick="filterCategory('all')" class="cat-btn active px-3.5 py-2 text-xs font-bold uppercase tracking-wider bg-tinta-utama text-kertas-kartu border border-tinta-utama whitespace-nowrap transition-colors">
+                        Semua (36)
+                    </button>
+                    <button type="button" data-cat="lauk-nasi" onclick="filterCategory('lauk-nasi')" class="cat-btn px-3.5 py-2 text-xs font-semibold uppercase tracking-wider bg-kertas-kartu text-tinta-utama hover:bg-kertas-sekunder border border-kertas-garis whitespace-nowrap transition-colors">
+                        Lauk + Nasi
+                    </button>
+                    <button type="button" data-cat="daging" onclick="filterCategory('daging')" class="cat-btn px-3.5 py-2 text-xs font-semibold uppercase tracking-wider bg-kertas-kartu text-tinta-utama hover:bg-kertas-sekunder border border-kertas-garis whitespace-nowrap transition-colors">
+                        Daging
+                    </button>
+                    <button type="button" data-cat="ayam" onclick="filterCategory('ayam')" class="cat-btn px-3.5 py-2 text-xs font-semibold uppercase tracking-wider bg-kertas-kartu text-tinta-utama hover:bg-kertas-sekunder border border-kertas-garis whitespace-nowrap transition-colors">
+                        Ayam
+                    </button>
+                    <button type="button" data-cat="ikan" onclick="filterCategory('ikan')" class="cat-btn px-3.5 py-2 text-xs font-semibold uppercase tracking-wider bg-kertas-kartu text-tinta-utama hover:bg-kertas-sekunder border border-kertas-garis whitespace-nowrap transition-colors">
+                        Ikan
+                    </button>
+                    <button type="button" data-cat="nasi-box" onclick="filterCategory('nasi-box')" class="cat-btn px-3.5 py-2 text-xs font-semibold uppercase tracking-wider bg-kertas-kartu text-tinta-utama hover:bg-kertas-sekunder border border-kertas-garis whitespace-nowrap transition-colors">
+                        Nasi Kotak
+                    </button>
+                    <button type="button" data-cat="tambahan" onclick="filterCategory('tambahan')" class="cat-btn px-3.5 py-2 text-xs font-semibold uppercase tracking-wider bg-kertas-kartu text-tinta-utama hover:bg-kertas-sekunder border border-kertas-garis whitespace-nowrap transition-colors">
+                        Tambahan
+                    </button>
+                </div>
+
+                <!-- Kotak Pencarian Menu -->
+                <div class="relative w-full md:w-64 shrink-0">
+                    <input type="text" id="search-menu" oninput="renderMenu()" placeholder="Cari rendang, ayam, ikan..." class="w-full pl-9 pr-4 py-2 bg-kertas-kartu border border-tinta-utama text-sm text-tinta-utama placeholder:text-tinta-redup focus:outline-none focus:bg-white">
+                    <svg class="w-4 h-4 text-tinta-sekunder absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="square" stroke-linejoin="miter" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Lembar Menu + Bon Pesanan -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Daftar Menu Gaya Lembar Cetak (2 Kolom Padat & Terbaca Cepat) -->
+                <div id="menu-grid" class="lg:col-span-8 bg-kertas-kartu border border-kertas-garis divide-y divide-kertas-garis"></div>
+
+                <!-- Panel Bon Pesanan Layar Lebar -->
+                <div class="hidden lg:block lg:col-span-4 sticky top-24">
+                    <div class="bg-kertas-kartu border border-tinta-utama">
+                        <div class="px-5 py-3.5 bg-tinta-utama text-kertas-kartu flex items-center justify-between">
+                            <h3 class="font-serif font-bold text-lg">Bon Pesanan</h3>
+                            <button type="button" onclick="clearCart()" class="text-xs text-kertas-sekunder hover:text-amber-300 underline">Kosongkan</button>
+                        </div>
+
+                        <div class="p-5 space-y-4">
+                            <div id="desktop-cart-items" class="space-y-2.5 max-h-64 overflow-y-auto pr-1"></div>
+
+                            <div class="pt-3 border-t border-tinta-utama flex items-center justify-between">
+                                <span class="text-xs font-bold uppercase tracking-wider text-tinta-sekunder">Total Bayar</span>
+                                <span id="desktop-cart-total" class="font-serif font-extrabold text-xl text-tinta-utama tabular-harga">Rp 0</span>
+                            </div>
+
+                            <div class="space-y-3 pt-1">
+                                <div>
+                                    <label for="order-method" class="block text-xs font-bold text-tinta-utama mb-1">Pilihan Layanan</label>
+                                    <select id="order-method" class="w-full border border-kertas-garisGelap px-3 py-2 text-xs sm:text-sm bg-kertas-utama text-tinta-utama focus:outline-none focus:border-tinta-utama">
+                                        <option value="Bungkus (Ambil Sendiri)">Bungkus (Ambil Sendiri)</option>
+                                        <option value="Minta Diantar">Minta Diantar</option>
+                                        <option value="Makan di Tempat">Makan di Tempat</option>
+                                        <option value="Pesanan Nasi Kotak">Pesanan Nasi Kotak</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="customer-name" class="block text-xs font-bold text-tinta-utama mb-1">Nama Pemesan</label>
+                                    <input type="text" id="customer-name" placeholder="Contoh: Budi" class="w-full border border-kertas-garisGelap px-3 py-2 text-xs sm:text-sm bg-white text-tinta-utama focus:outline-none focus:border-tinta-utama">
+                                </div>
+
+                                <div>
+                                    <label for="customer-note" class="block text-xs font-bold text-tinta-utama mb-1">Catatan / Alamat Antar</label>
+                                    <textarea id="customer-note" rows="2" placeholder="Contoh: Kuah dipisah, sambal ijo..." class="w-full border border-kertas-garisGelap px-3 py-2 text-xs sm:text-sm bg-white text-tinta-utama focus:outline-none focus:border-tinta-utama"></textarea>
+                                </div>
+                            </div>
+
+                            <button type="button" onclick="sendOrderToWhatsApp('desktop')" class="w-full bg-minang-daun hover:bg-minang-daunGelap text-white font-bold text-sm py-3.5 px-4 border border-tinta-utama transition-colors flex items-center justify-center gap-2">
+                                <span>Kirim Bon ke WhatsApp</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KARTU POSTER NASI KOTAK ACARA (Menyatu dalam Ritme Halaman, Bukan Banner Penuh Klise) -->
+            <div class="mt-12 bg-kertas-kartu border-2 border-tinta-utama p-6 sm:p-8 lg:p-10">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div class="space-y-2.5 max-w-2xl">
+                        <div class="inline-flex items-center gap-2 bg-minang-cabai text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5">
+                            <span>Pesanan Rombongan &amp; Acara</span>
+                        </div>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-extrabold text-tinta-utama leading-tight">
+                            Butuh Nasi Kotak untuk Rapat, Pengajian, atau Syukuran?
+                        </h3>
+                        <p class="text-xs sm:text-sm text-tinta-sekunder leading-relaxed">
+                            Tersedia 8 pilihan paket nasi kotak lengkap dengan lauk rendang, gulai cincang, ayam bakar, ayam serundeng, atau ikan mulai <strong>Rp 30.000/kotak</strong>. Bisa pesan satuan maupun puluhan kotak.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
+                        <a href="https://wa.me/6282128325210?text=Halo%20RM%20Cahaya%20Masakan%20Padang%20Sodong%2C%20saya%20mau%20tanya%20pesanan%20Nasi%20Kotak." 
+                           onclick="return bukaTautanLuar(event, this.href)"
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="inline-flex items-center justify-center gap-2 bg-tinta-utama hover:bg-minang-cabai text-kertas-kartu font-bold text-sm px-6 py-3.5 transition-colors">
+                            <span>Tanya Paket via WhatsApp</span>
+                        </a>
+                        <button type="button" onclick="filterCategory('nasi-box'); document.getElementById('menu').scrollIntoView({behavior: 'smooth'});" class="inline-flex items-center justify-center gap-2 bg-kertas-utama hover:bg-kertas-sekunder text-tinta-utama border border-tinta-utama font-bold text-xs sm:text-sm px-6 py-3 transition-colors">
+                            <span>Lihat 8 Menu Nasi Kotak</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ULASAN PELANGGAN & INFO PEMESANAN ==================== -->
+    <section id="ulasan" class="py-14 sm:py-20 bg-kertas-sekunder/60 border-b border-kertas-garis">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+            <!-- Sorotan Ulasan Asimetris (1 Utama Besar + 2 Pendamping) -->
+            <div>
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-kertas-garis mb-8">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-minang-cabai">Dari Pembeli</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-tinta-utama mt-1">
+                            Cerita dari Meja Makan &amp; Pembeli Online
+                        </h2>
+                    </div>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-kertas-kartu border border-tinta-utama text-xs font-bold text-tinta-utama tabular-harga">
+                        <span class="text-minang-kunyit">★★★★★</span>
+                        <span>4,9 / 5 di ShopeeFood</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- Kutipan Utama -->
+                    <div class="lg:col-span-7 bg-kertas-kartu border border-tinta-utama p-6 sm:p-8 space-y-5">
+                        <span class="inline-block text-xs font-bold uppercase tracking-wider text-minang-daun">Menu Dipesan: Rendang + Nasi</span>
+                        <blockquote class="font-serif text-xl sm:text-2xl font-bold text-tinta-utama leading-snug">
+                            “Rendangnya empuk banget dan bumbunya medok sampai ke dalam. Sayur nangka sama sambalnya juga pas, porsinya bikin kenyang.”
+                        </blockquote>
+                        <div class="pt-4 border-t border-kertas-garis flex items-center justify-between text-xs">
+                            <span class="font-bold text-tinta-utama">Pembeli ShopeeFood • Sodong</span>
+                            <span class="font-bold text-minang-kunyit tabular-harga">5,0 ★</span>
+                        </div>
+                    </div>
+
+                    <!-- Dua Catatan Pelanggan -->
+                    <div class="lg:col-span-5 divide-y divide-kertas-garis border-y border-kertas-garis">
+                        <div class="py-5 space-y-2">
+                            <p class="text-sm text-tinta-utama leading-relaxed">
+                                “Ayam bakar sama ayam serundengnya selalu jadi langganan makan siang. Harganya pas di kantong buat ukuran paket nasi lengkap.”
+                            </p>
+                            <div class="flex items-center justify-between text-xs text-tinta-sekunder">
+                                <span class="font-semibold">Pelanggan Sodong • Ayam Bakar + Nasi</span>
+                                <span class="font-bold text-tinta-utama tabular-harga">5,0 ★</span>
+                            </div>
+                        </div>
+
+                        <div class="py-5 space-y-2">
+                            <p class="text-sm text-tinta-utama leading-relaxed">
+                                “Tempatnya gampang dicari di Sodong, parkir motor maupun mobil luas dan gratis. Cocok kalau mau mampir makan bareng keluarga.”
+                            </p>
+                            <div class="flex items-center justify-between text-xs text-tinta-sekunder">
+                                <span class="font-semibold">Pengunjung Warung • Makan di Tempat</span>
+                                <span class="font-bold text-tinta-utama tabular-harga">5,0 ★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pertanyaan yang Sering Ditanyakan -->
+            <div class="bg-kertas-kartu border border-kertas-garis p-6 sm:p-8">
+                <div class="pb-4 border-b border-kertas-garis mb-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-minang-cabai">Panduan Singkat</span>
+                    <h3 class="font-serif text-2xl font-extrabold text-tinta-utama mt-1">Hal yang Sering Ditanyakan</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                    <div class="space-y-1.5">
+                        <h4 class="font-bold text-sm text-tinta-utama">Cara pesan lewat halaman ini gimana?</h4>
+                        <p class="text-xs sm:text-sm text-tinta-sekunder leading-relaxed">
+                            Tekan <strong>"+ Tambah"</strong> di menu yang diinginkan, isi nama dan pilihan layanan (bungkus, minta diantar, atau makan di tempat), lalu tekan <strong>"Kirim Bon ke WhatsApp"</strong>.
+                        </p>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <h4 class="font-bold text-sm text-tinta-utama">Bisa minta kuah atau sambal dipisah?</h4>
+                        <p class="text-xs sm:text-sm text-tinta-sekunder leading-relaxed">
+                            Bisa. Tulis langsung di kolom <strong>"Catatan / Alamat Antar"</strong> sebelum pesanan dikirim ke WhatsApp.
+                        </p>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <h4 class="font-bold text-sm text-tinta-utama">Kalau pesan Nasi Kotak minimal berapa?</h4>
+                        <p class="text-xs sm:text-sm text-tinta-sekunder leading-relaxed">
+                            Pesan 1 kotak juga tetap dilayani. Untuk pesanan acara (di atas 15–20 kotak), kabari H-1 lewat WhatsApp agar disiapkan lebih awal.
+                        </p>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <h4 class="font-bold text-sm text-tinta-utama">Parkir di depan warung bayar atau gratis?</h4>
+                        <p class="text-xs sm:text-sm text-tinta-sekunder leading-relaxed">
+                            Gratis. Halaman depan warung di Sodong, Tigaraksa cukup luas untuk parkir motor maupun mobil.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LOKASI & KONTAK ==================== -->
+    <section id="lokasi" class="py-14 sm:py-20 bg-kertas-utama">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                
+                <!-- Info Alamat & Kontak -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-minang-cabai">Lokasi Warung</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-tinta-utama mt-1">
+                            Mampir Langsung ke Warung
+                        </h2>
+                        <p class="text-tinta-sekunder text-sm sm:text-base mt-2 leading-relaxed">
+                            Berlokasi di Sodong, Kec. Tigaraksa, Kabupaten Tangerang. Mudah dijangkau dan tersedia parkir luas gratis.
+                        </p>
+                    </div>
+
+                    <div class="divide-y divide-kertas-garis border-y border-tinta-utama">
+                        <div class="py-4 flex items-start gap-3.5">
+                            <svg class="w-5 h-5 text-minang-cabai shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="square" stroke-linejoin="miter" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="square" stroke-linejoin="miter" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <div>
+                                <h3 class="font-bold text-sm text-tinta-utama">Alamat Lengkap</h3>
+                                <p class="text-sm text-tinta-sekunder mt-0.5">Sodong, Kec. Tigaraksa, Kabupaten Tangerang, Banten 15720</p>
+                            </div>
+                        </div>
+
+                        <div class="py-4 flex items-start gap-3.5">
+                            <svg class="w-5 h-5 text-minang-daun shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="square" stroke-linejoin="miter" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <div>
+                                <h3 class="font-bold text-sm text-tinta-utama">Telepon &amp; WhatsApp</h3>
+                                <p class="text-sm text-tinta-sekunder mt-0.5 tabular-harga">0821-2832-5210</p>
+                            </div>
+                        </div>
+
+                        <div class="py-4 flex items-start gap-3.5">
+                            <svg class="w-5 h-5 text-minang-kunyit shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="square" stroke-linejoin="miter" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <div>
+                                <h3 class="font-bold text-sm text-tinta-utama">Fasilitas Parkir</h3>
+                                <p class="text-sm text-tinta-sekunder mt-0.5">Area parkir luas &amp; gratis untuk motor maupun mobil.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tombol Aksi Lokasi -->
+                    <div class="flex flex-wrap items-center gap-3 pt-1">
+                        <a href="https://maps.app.goo.gl/KiAMyWSLAHiEWDfRA?g_st=ac" 
+                           onclick="return bukaTautanLuar(event, this.href)"
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="inline-flex items-center justify-center gap-2 bg-tinta-utama hover:bg-minang-cabai text-kertas-kartu font-bold text-sm px-5 py-3 transition-colors">
+                            <span>Buka Google Maps</span>
+                        </a>
+                        <button type="button" 
+                           onclick="bukaModalShopeeFood()"
+                           class="inline-flex items-center justify-center gap-2 bg-kertas-kartu hover:bg-kertas-sekunder text-tinta-utama border border-tinta-utama font-bold text-sm px-5 py-3 transition-colors cursor-pointer">
+                            <span class="w-2 h-2 bg-orange-600"></span>
+                            <span>ShopeeFood</span>
+                        </button>
+                        <a href="tel:+6282128325210" class="inline-flex items-center justify-center gap-2 bg-kertas-kartu hover:bg-kertas-sekunder text-tinta-utama border border-tinta-utama font-bold text-sm px-5 py-3 transition-colors">
+                            <span>Telepon</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-tinta-utama text-kertas-sekunder pt-10 pb-24 lg:pb-10 border-t border-tinta-utama">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-8 border-b border-white/15">
+                <div>
+                    <span class="font-serif font-extrabold text-xl text-kertas-kartu">RM CAHAYA Masakan Padang</span>
+                    <p class="text-xs sm:text-sm text-kertas-sekunder/80 mt-1">Sodong, Kec. Tigaraksa, Kabupaten Tangerang, Banten 15720</p>
+                </div>
+                <div class="flex flex-wrap gap-5 text-xs uppercase tracking-wider font-semibold text-kertas-sekunder">
+                    <a href="#beranda" class="hover:text-amber-300 transition-colors">Beranda</a>
+                    <a href="#cerita" class="hover:text-amber-300 transition-colors">Dapur Kami</a>
+                    <a href="#menu" class="hover:text-amber-300 transition-colors">Daftar Menu</a>
+                    <a href="#ulasan" class="hover:text-amber-300 transition-colors">Ulasan</a>
+                    <a href="#lokasi" class="hover:text-amber-300 transition-colors">Lokasi</a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-kertas-sekunder/70 gap-2">
+                <p>&copy; <span id="current-year"></span> Rumah Makan CAHAYA Masakan Padang — Sodong.</p>
+                <p class="tabular-harga">WhatsApp / Telepon: 0821-2832-5210</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BILAH MELAYANG BON PESANAN (HP) ==================== -->
+    <div id="mobile-floating-bar" class="hidden lg:hidden fixed bottom-4 inset-x-4 z-40">
+        <button type="button" onclick="toggleCartDrawer()" class="w-full bg-tinta-utama text-kertas-kartu px-4 py-3.5 border-2 border-amber-400 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <span id="mobile-bar-count" class="bg-minang-cabai text-white font-bold text-xs px-2 py-0.5 tabular-harga">0 Porsi</span>
+                <span class="text-sm font-bold">Lihat Bon Pesanan</span>
+            </div>
+            <span id="mobile-bar-total" class="font-bold text-amber-300 text-sm tabular-harga">Rp 0</span>
+        </button>
+    </div>
+
+    <!-- ==================== LACI BON PESANAN ==================== -->
+    <div id="cart-drawer-overlay" onclick="toggleCartDrawer()" class="hidden fixed inset-0 bg-tinta-utama/50 backdrop-blur-xs z-50 transition-opacity"></div>
+    <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-kertas-kartu border-l-2 border-tinta-utama z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="px-5 py-4 bg-tinta-utama text-kertas-kartu flex items-center justify-between">
+            <h3 class="font-serif font-bold text-lg">Bon Pesanan</h3>
+            <div class="flex items-center gap-3">
+                <button type="button" onclick="clearCart()" class="text-xs text-kertas-sekunder hover:text-amber-300 underline">Kosongkan</button>
+                <button type="button" onclick="toggleCartDrawer()" aria-label="Tutup Bon Pesanan" class="p-1.5 bg-white/10 hover:bg-white/20 text-white">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="square" stroke-linejoin="miter" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="p-5 flex-1 overflow-y-auto space-y-4">
+            <div id="drawer-cart-items" class="space-y-2.5"></div>
+
+            <div class="pt-3 border-t border-tinta-utama flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-tinta-sekunder">Total Bayar</span>
+                <span id="drawer-cart-total" class="font-serif font-extrabold text-xl text-tinta-utama tabular-harga">Rp 0</span>
+            </div>
+
+            <div class="space-y-3 pt-1">
+                <div>
+                    <label for="drawer-order-method" class="block text-xs font-bold text-tinta-utama mb-1">Pilihan Layanan</label>
+                    <select id="drawer-order-method" class="w-full border border-kertas-garisGelap px-3 py-2.5 text-sm bg-kertas-utama text-tinta-utama focus:outline-none focus:border-tinta-utama">
+                        <option value="Bungkus (Ambil Sendiri)">Bungkus (Ambil Sendiri)</option>
+                        <option value="Minta Diantar">Minta Diantar</option>
+                        <option value="Makan di Tempat">Makan di Tempat</option>
+                        <option value="Pesanan Nasi Kotak">Pesanan Nasi Kotak</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="drawer-customer-name" class="block text-xs font-bold text-tinta-utama mb-1">Nama Pemesan</label>
+                    <input type="text" id="drawer-customer-name" placeholder="Contoh: Budi" class="w-full border border-kertas-garisGelap px-3 py-2.5 text-sm bg-white text-tinta-utama focus:outline-none focus:border-tinta-utama">
+                </div>
+
+                <div>
+                    <label for="drawer-customer-note" class="block text-xs font-bold text-tinta-utama mb-1">Catatan / Alamat Antar</label>
+                    <textarea id="drawer-customer-note" rows="2" placeholder="Contoh: Kuah dipisah, sambal ijo..." class="w-full border border-kertas-garisGelap px-3 py-2.5 text-sm bg-white text-tinta-utama focus:outline-none focus:border-tinta-utama"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-4 border-t border-kertas-garis bg-kertas-sekunder">
+            <button type="button" onclick="sendOrderToWhatsApp('drawer')" class="w-full bg-minang-daun hover:bg-minang-daunGelap text-white font-bold text-sm py-3.5 px-4 border border-tinta-utama transition-colors flex items-center justify-center gap-2">
+                <span>Kirim Bon ke WhatsApp</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ==================== MODAL PANDUAN SHOPEEFOOD ==================== -->
+    <div id="shopeefood-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-tinta-utama/60 backdrop-blur-xs">
+        <div class="bg-kertas-kartu max-w-md w-full p-6 border-2 border-tinta-utama animate-stamp space-y-4">
+            <div class="flex items-start justify-between gap-3 pb-3 border-b border-kertas-garis">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-orange-700">ShopeeFood • Star Resto (4,9 ★)</span>
+                    <h3 class="font-serif font-extrabold text-xl text-tinta-utama mt-0.5">Pesan Lewat Aplikasi Shopee</h3>
+                </div>
+                <button type="button" onclick="tutupModalShopeeFood()" aria-label="Tutup Jendela" class="p-1.5 text-tinta-sekunder hover:text-tinta-utama hover:bg-kertas-sekunder">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="square" stroke-linejoin="miter" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="bg-kertas-utama border border-kertas-garis p-4 text-xs sm:text-sm text-tinta-sekunder space-y-2.5 leading-relaxed">
+                <p>Tautan ShopeeFood hanya bisa dibuka lewat <strong>aplikasi Shopee di HP</strong> (jika dibuka di peramban laptop akan muncul halaman kosong).</p>
+                <p>Ketik nama toko ini di kolom pencarian <strong>ShopeeFood</strong>:</p>
+                <div class="flex items-center justify-between gap-2 bg-white border border-tinta-utama px-3 py-2">
+                    <span class="font-bold text-tinta-utama text-xs sm:text-sm select-all">RM CAHAYA MASAKAN PADANG -SODONG</span>
+                    <button type="button" onclick="salinTeks('RM CAHAYA MASAKAN PADANG -SODONG', 'Nama toko disalin!')" class="shrink-0 text-xs font-bold text-minang-cabai hover:underline px-2 py-1">
+                        Salin
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                <a href="https://shopee.co.id/universal-link/now-food/shop/22393064?deep_and_deferred=1&shareChannel=copy_link" 
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="w-full inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs sm:text-sm py-3 px-4 border border-tinta-utama transition-colors">
+                    <span>Buka Aplikasi Shopee</span>
+                </a>
+                <button type="button" 
+                   onclick="salinTeks('https://shopee.co.id/universal-link/now-food/shop/22393064?deep_and_deferred=1&shareChannel=copy_link', 'Tautan ShopeeFood disalin!')"
+                   class="w-full inline-flex items-center justify-center gap-2 bg-kertas-sekunder hover:bg-kertas-garis text-tinta-utama font-bold text-xs sm:text-sm py-3 px-4 border border-tinta-utama transition-colors">
+                    <span>Salin Tautan Toko</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== NOTIFIKASI SINGKAT ==================== -->
+    <div id="toast-notification" class="fixed top-20 right-4 z-50 transform translate-x-full opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-tinta-utama text-kertas-kartu text-xs sm:text-sm font-semibold px-4 py-3 border border-amber-400 flex items-center gap-2.5">
+            <span class="w-2 h-2 bg-amber-400 shrink-0"></span>
+            <span id="toast-message">Menu ditambahkan</span>
+        </div>
+    </div>
+
+    <!-- ==================== SKRIP UTAMA ==================== -->
+    <script>
+        const SHOPEE_UNIVERSAL_URL = 'https://shopee.co.id/universal-link/now-food/shop/22393064?deep_and_deferred=1&shareChannel=copy_link';
+
+        function bukaAplikasiShopee(event) {
+            if (event) event.preventDefault();
+            // Menggunakan tautan HTTPS resmi Shopee agar lolos aturan keamanan CSP dan langsung ditangkap App Link Shopee di HP
+            bukaTautanLuar(null, SHOPEE_UNIVERSAL_URL);
+            return false;
+        }
+
+        function bukaShopeeFoodLangsung() {
+            const ua = navigator.userAgent || '';
+            const isMobile = /android|iphone|ipad|ipod/i.test(ua);
+
+            if (isMobile) {
+                bukaTautanLuar(null, SHOPEE_UNIVERSAL_URL);
+            } else {
+                bukaModalShopeeFood();
+            }
+        }
+
+        function bukaModalShopeeFood() {
+            const modal = document.getElementById('shopeefood-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function tutupModalShopeeFood() {
+            const modal = document.getElementById('shopeefood-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+        }
+
+        function salinTeks(teks, pesanSukses) {
+            const textarea = document.createElement('textarea');
+            textarea.value = teks;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showToast(pesanSukses || 'Berhasil disalin!');
+            } catch (e) {
+                showToast('Gagal menyalin otomatis');
+            }
+            document.body.removeChild(textarea);
+        }
+
+        function bukaTautanLuar(event, url) {
+            if (event) event.preventDefault();
+            if (!url) return false;
+            try {
+                const win = window.open(url, '_blank', 'noopener,noreferrer');
+                if (!win) {
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }
+            } catch (err) {
+                salinTeks(url, 'Tautan disalin, silakan tempel di peramban.');
+            }
+            return false;
+        }
+
+        // Daftar 36 Menu Resmi RM CAHAYA MASAKAN PADANG - SODONG
+        const menuData = [
+            // 1. LAUK + NASI
+            {
+                id: 'rendang-nasi',
+                name: 'Rendang + Nasi',
+                category: 'lauk-nasi',
+                categoryLabel: 'Lauk + Nasi',
+                price: 25000,
+                badge: 'Terlaris',
+                description: 'Rendang daging sapi empuk + nasi hangat, sayur nangka, daun singkong, dan sambal.'
+            },
+            {
+                id: 'gulai-cincang-nasi',
+                name: 'Gulai Cincang (Rawon) + Nasi',
+                category: 'lauk-nasi',
+                categoryLabel: 'Lauk + Nasi',
+                price: 22000,
+                badge: '',
+                description: 'Gulai cincang daging sapi + nasi putih dan sayur komplit.'
+            },
+            {
+                id: 'ayam-bakar-nasi',
+                name: 'Ayam Bakar + Nasi',
+                category: 'lauk-nasi',
+                categoryLabel: 'Lauk + Nasi',
+                price: 18000,
+                badge: 'Terlaris',
+                description: 'Ayam bakar bumbu Padang + nasi hangat, sayur, dan sambal.'
+            },
+            {
+                id: 'ayam-goreng-serundeng-nasi',
+                name: 'Ayam Goreng Serundeng + Nasi',
+                category: 'lauk-nasi',
+                categoryLabel: 'Lauk + Nasi',
+                price: 18000,
+                badge: 'Favorit',
+                description: 'Ayam goreng renyah tabur serundeng kelapa gurih + nasi komplit.'
+            },
+            {
+                id: 'ayam-goreng-sambel-ijo-nasi',
+                name: 'Ayam Goreng Sambel Ijo + Nasi',
+                category: 'lauk-nasi',
+                categoryLabel: 'Lauk + Nasi',
+                price: 18000,
+                badge: '',
+                description: 'Ayam goreng siram sambal cabai hijau + nasi dan sayur komplit.'
+            },
+            {
+                id: 'ayam-sayur-nasi',
+                name: 'Ayam Sayur + Nasi',
+                category: 'lauk-nasi',
+                categoryLabel: 'Lauk + Nasi',
+                price: 18000,
+                badge: '',
+                description: 'Ayam gulai kuah santan kuning + nasi hangat dan sayur komplit.'
+            },
+            {
+                id: 'ikan-lele-goreng-nasi',
+                name: 'Ikan Lele Goreng + Nasi',
+                category: 'lauk-nasi',
+                categoryLabel: 'Lauk + Nasi',
+                price: 18000,
+                badge: '',
+                description: 'Lele goreng garing + nasi hangat, sayur, dan sambal.'
+            },
+            {
+                id: 'ikan-kembung-goreng-nasi',
+                name: 'Ikan Kembung Goreng + Nasi',
+                category: 'lauk-nasi',
+                categoryLabel: 'Lauk + Nasi',
+                price: 18000,
+                badge: '',
+                description: 'Ikan kembung goreng gurih + nasi dan sayur komplit.'
+            },
+            {
+                id: 'ikan-kembung-bakar-nasi',
+                name: 'Ikan Kembung Bakar + Nasi',
+                category: 'lauk-nasi',
+                categoryLabel: 'Lauk + Nasi',
+                price: 18000,
+                badge: '',
+                description: 'Ikan kembung bakar bumbu oles + nasi dan sayur komplit.'
+            },
+            {
+                id: 'ikan-tongkol-kuah-kuning-nasi',
+                name: 'Ikan Tongkol Kuah Kuning + Nasi',
+                category: 'lauk-nasi',
+                categoryLabel: 'Lauk + Nasi',
+                price: 18000,
+                badge: '',
+                description: 'Ikan tongkol masak kuah gulai kuning + nasi komplit.'
+            },
+            {
+                id: 'ikan-tongkol-asam-padeh-nasi',
+                name: 'Ikan Tongkol Asam Padeh + Nasi',
+                category: 'lauk-nasi',
+                categoryLabel: 'Lauk + Nasi',
+                price: 18000,
+                badge: '',
+                description: 'Ikan tongkol kuah asam pedas segar + nasi komplit.'
+            },
+            {
+                id: 'ikan-tongkol-balado-nasi',
+                name: 'Ikan Tongkol Balado + Nasi',
+                category: 'lauk-nasi',
+                categoryLabel: 'Lauk + Nasi',
+                price: 18000,
+                badge: '',
+                description: 'Ikan tongkol goreng sambal balado merah + nasi komplit.'
+            },
+            {
+                id: 'gulai-hati-ampela-nasi',
+                name: 'Gulai Hati Ampela + Nasi',
+                category: 'lauk-nasi',
+                categoryLabel: 'Lauk + Nasi',
+                price: 18000,
+                badge: '',
+                description: 'Gulai hati ampela ayam kuah kental + nasi dan sayur komplit.'
+            },
+
+            // 2. DAGING
+            {
+                id: 'rendang-lauk',
+                name: 'Rendang',
+                category: 'daging',
+                categoryLabel: 'Daging',
+                price: 20000,
+                badge: 'Terlaris',
+                description: 'Lauk saja tanpa nasi (1 potong rendang daging sapi).'
+            },
+            {
+                id: 'gulai-cincang-lauk',
+                name: 'Gulai Cincang (Rawon) Tanpa Nasi',
+                category: 'daging',
+                categoryLabel: 'Daging',
+                price: 17000,
+                badge: '',
+                description: 'Lauk saja tanpa nasi, gulai cincang daging sapi gurih.'
+            },
+
+            // 3. AYAM
+            {
+                id: 'ayam-bakar-lauk',
+                name: 'Ayam Bakar',
+                category: 'ayam',
+                categoryLabel: 'Ayam',
+                price: 15000,
+                badge: '',
+                description: 'Lauk saja tanpa nasi, ayam bakar bumbu Padang.'
+            },
+            {
+                id: 'ayam-goreng-serundeng-lauk',
+                name: 'Ayam Goreng Serundeng',
+                category: 'ayam',
+                categoryLabel: 'Ayam',
+                price: 15000,
+                badge: '',
+                description: 'Lauk saja tanpa nasi, ayam goreng dengan serundeng kelapa.'
+            },
+            {
+                id: 'ayam-goreng-balado-lauk',
+                name: 'Ayam Goreng Balado',
+                category: 'ayam',
+                categoryLabel: 'Ayam',
+                price: 15000,
+                badge: '',
+                description: 'Lauk saja tanpa nasi, ayam goreng sambal balado merah.'
+            },
+            {
+                id: 'gulai-hati-ampela-lauk',
+                name: 'Gulai Hati Ampela',
+                category: 'ayam',
+                categoryLabel: 'Ayam',
+                price: 13000,
+                badge: '',
+                description: 'Lauk saja tanpa nasi, gulai hati ampela ayam.'
+            },
+            {
+                id: 'goreng-hati-ampela-lauk',
+                name: 'Goreng Hati Ampela',
+                category: 'ayam',
+                categoryLabel: 'Ayam',
+                price: 13000,
+                badge: '',
+                description: 'Lauk saja tanpa nasi, hati ampela ayam goreng bumbu.'
+            },
+
+            // 4. IKAN
+            {
+                id: 'ikan-kembung-bakar-lauk',
+                name: 'Ikan Kembung Bakar',
+                category: 'ikan',
+                categoryLabel: 'Ikan',
+                price: 15000,
+                badge: '',
+                description: 'Lauk saja tanpa nasi, ikan kembung bakar bumbu.'
+            },
+            {
+                id: 'ikan-kembung-goreng-lauk',
+                name: 'Ikan Kembung Goreng',
+                category: 'ikan',
+                categoryLabel: 'Ikan',
+                price: 15000,
+                badge: '',
+                description: 'Lauk saja tanpa nasi, ikan kembung goreng garing.'
+            },
+            {
+                id: 'lele-goreng-serundeng-lauk',
+                name: 'Lele Goreng Serundeng',
+                category: 'ikan',
+                categoryLabel: 'Ikan',
+                price: 15000,
+                badge: '',
+                description: 'Lauk saja tanpa nasi, lele goreng tabur serundeng.'
+            },
+            {
+                id: 'ikan-tongkol-kuah-kuning-lauk',
+                name: 'Ikan Tongkol Kuah Kuning',
+                category: 'ikan',
+                categoryLabel: 'Ikan',
+                price: 15000,
+                badge: '',
+                description: 'Lauk saja tanpa nasi, ikan tongkol kuah gulai kuning.'
+            },
+            {
+                id: 'ikan-tongkol-asam-padeh-lauk',
+                name: 'Ikan Tongkol Asam Padeh',
+                category: 'ikan',
+                categoryLabel: 'Ikan',
+                price: 15000,
+                badge: 'Terlaris',
+                description: 'Lauk saja tanpa nasi, ikan tongkol kuah asam pedas.'
+            },
+            {
+                id: 'ikan-tongkol-balado-lauk',
+                name: 'Ikan Tongkol Balado',
+                category: 'ikan',
+                categoryLabel: 'Ikan',
+                price: 15000,
+                badge: '',
+                description: 'Lauk saja tanpa nasi, ikan tongkol sambal balado.'
+            },
+
+            // 5. NASI KOTAK
+            {
+                id: 'rendang-daging-box',
+                name: 'Rendang Daging + Kotak',
+                category: 'nasi-box',
+                categoryLabel: 'Nasi Kotak',
+                price: 35000,
+                badge: 'Paket Acara',
+                description: 'Paket komplit rendang daging + nasi, sayur, sambal dalam kotak.'
+            },
+            {
+                id: 'gulai-cincang-box',
+                name: 'Gulai Cincang (Rawon) + Kotak',
+                category: 'nasi-box',
+                categoryLabel: 'Nasi Kotak',
+                price: 35000,
+                badge: '',
+                description: 'Paket komplit gulai cincang + nasi, sayur, sambal dalam kotak.'
+            },
+            {
+                id: 'ayam-bakar-box',
+                name: 'Ayam Bakar + Kotak',
+                category: 'nasi-box',
+                categoryLabel: 'Nasi Kotak',
+                price: 30000,
+                badge: 'Favorit Acara',
+                description: 'Paket komplit ayam bakar + nasi, sayur, sambal dalam kotak.'
+            },
+            {
+                id: 'ayam-goreng-serundeng-box',
+                name: 'Ayam Goreng Serundeng + Kotak',
+                category: 'nasi-box',
+                categoryLabel: 'Nasi Kotak',
+                price: 30000,
+                badge: '',
+                description: 'Paket komplit ayam goreng serundeng + nasi dalam kotak.'
+            },
+            {
+                id: 'ayam-sambel-ijo-box',
+                name: 'Ayam Sambel Ijo + Kotak',
+                category: 'nasi-box',
+                categoryLabel: 'Nasi Kotak',
+                price: 30000,
+                badge: '',
+                description: 'Paket komplit ayam sambal ijo + nasi dalam kotak.'
+            },
+            {
+                id: 'ikan-kembung-goreng-box',
+                name: 'Ikan Kembung Goreng + Kotak',
+                category: 'nasi-box',
+                categoryLabel: 'Nasi Kotak',
+                price: 30000,
+                badge: '',
+                description: 'Paket komplit ikan kembung goreng + nasi dalam kotak.'
+            },
+            {
+                id: 'ikan-kembung-bakar-box',
+                name: 'Ikan Kembung Bakar + Kotak',
+                category: 'nasi-box',
+                categoryLabel: 'Nasi Kotak',
+                price: 30000,
+                badge: '',
+                description: 'Paket komplit ikan kembung bakar + nasi dalam kotak.'
+            },
+            {
+                id: 'lele-goreng-serundeng-box',
+                name: 'Lele Goreng Serundeng + Kotak',
+                category: 'nasi-box',
+                categoryLabel: 'Nasi Kotak',
+                price: 30000,
+                badge: '',
+                description: 'Paket komplit lele goreng serundeng + nasi dalam kotak.'
+            },
+
+            // 6. TAMBAHAN
+            {
+                id: 'nasi-putih',
+                name: 'Nasi Putih',
+                category: 'tambahan',
+                categoryLabel: 'Tambahan',
+                price: 8000,
+                badge: '',
+                description: 'Nasi putih hangat 1 porsi.'
+            },
+            {
+                id: 'perkedel',
+                name: 'Perkedel',
+                category: 'tambahan',
+                categoryLabel: 'Tambahan',
+                price: 7500,
+                badge: 'Favorit',
+                description: 'Perkedel kentang goreng 1 buah.'
+            }
+        ];
+
+        let currentCategory = 'all';
+        let cart = {};
+        let toastTimeout = null;
+
+        function formatRupiah(angka) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(angka);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast-notification');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+            
+            toast.classList.remove('translate-x-full', 'opacity-0');
+            
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('translate-x-full', 'opacity-0');
+            }, 2400);
+        }
+
+        function filterCategory(category) {
+            currentCategory = category;
+            
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                if (btn.dataset.cat === category) {
+                    btn.className = 'cat-btn active px-3.5 py-2 text-xs font-bold uppercase tracking-wider bg-tinta-utama text-kertas-kartu border border-tinta-utama whitespace-nowrap transition-colors';
+                } else {
+                    btn.className = 'cat-btn px-3.5 py-2 text-xs font-semibold uppercase tracking-wider bg-kertas-kartu text-tinta-utama hover:bg-kertas-sekunder border border-kertas-garis whitespace-nowrap transition-colors';
+                }
+            });
+
+            renderMenu();
+        }
+
+        function renderMenu() {
+            const grid = document.getElementById('menu-grid');
+            const searchQuery = document.getElementById('search-menu').value.toLowerCase().trim();
+
+            const filtered = menuData.filter(item => {
+                const matchCat = currentCategory === 'all' || item.category === currentCategory;
+                const matchSearch = item.name.toLowerCase().includes(searchQuery) || item.description.toLowerCase().includes(searchQuery);
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="p-10 text-center">
+                        <p class="font-serif text-lg font-bold text-tinta-utama">Menu tidak ditemukan</p>
+                        <p class="text-sm text-tinta-sekunder mt-1">Coba cari kata lain atau pilih kategori "Semua (36)".</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Susunan bergaya lembar buku menu rumah makan dengan garis pemisah & harga rata kanan
+            grid.innerHTML = filtered.map(item => {
+                const qty = cart[item.id] || 0;
+                const badgeHTML = item.badge 
+                    ? `<span class="px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-minang-cabai/10 text-minang-cabai border border-minang-cabai/30">${item.badge}</span>` 
+                    : '';
+
+                return `
+                    <div class="animate-stamp p-4 sm:p-5 hover:bg-kertas-utama/60 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-5">
+                        <div class="min-w-0 flex-1 space-y-1">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-tinta-redup">${item.categoryLabel}</span>
+                                ${badgeHTML}
+                            </div>
+
+                            <h3 class="font-serif text-base sm:text-lg font-bold text-tinta-utama leading-snug">
+                                ${item.name}
+                            </h3>
+                            <p class="text-xs text-tinta-sekunder leading-relaxed">
+                                ${item.description}
+                            </p>
+                        </div>
+
+                        <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-2.5 pt-2 sm:pt-0 border-t sm:border-t-0 border-dashed border-kertas-garis shrink-0">
+                            <span class="font-bold text-base text-tinta-utama tabular-harga">${formatRupiah(item.price)}</span>
+
+                            ${qty === 0 ? `
+                                <button type="button" onclick="updateCart('${item.id}', 1)" class="inline-flex items-center gap-1 bg-kertas-utama hover:bg-tinta-utama text-tinta-utama hover:text-kertas-kartu border border-tinta-utama text-xs font-bold px-3 py-1.5 transition-colors">
+                                    <span>+ Tambah</span>
+                                </button>
+                            ` : `
+                                <div class="inline-flex items-center border border-tinta-utama bg-kertas-utama">
+                                    <button type="button" onclick="updateCart('${item.id}', -1)" aria-label="Kurangi" class="w-7 h-7 bg-kertas-kartu text-tinta-utama font-bold hover:bg-kertas-sekunder flex items-center justify-center">-</button>
+                                    <span class="px-2.5 text-xs font-bold text-tinta-utama tabular-harga">${qty}</span>
+                                    <button type="button" onclick="updateCart('${item.id}', 1)" aria-label="Tambah" class="w-7 h-7 bg-minang-cabai text-white font-bold hover:bg-minang-cabaiGelap flex items-center justify-center">+</button>
+                                </div>
+                            `}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function updateCart(id, delta) {
+            const item = menuData.find(m => m.id === id);
+            if (!item) return;
+
+            const currentQty = cart[id] || 0;
+            const nextQty = currentQty + delta;
+
+            if (nextQty <= 0) {
+                delete cart[id];
+            } else {
+                cart[id] = nextQty;
+                if (delta > 0) {
+                    showToast(`${item.name} (+1) masuk ke bon`);
+                }
+            }
+
+            renderMenu();
+            renderCart();
+        }
+
+        function clearCart() {
+            cart = {};
+            renderMenu();
+            renderCart();
+            showToast('Bon pesanan dikosongkan');
+        }
+
+        function renderCart() {
+            const itemIds = Object.keys(cart);
+            let totalQty = 0;
+            let totalPrice = 0;
+
+            let itemsHTML = '';
+
+            if (itemIds.length === 0) {
+                itemsHTML = `
+                    <div class="text-center py-8 px-4 bg-kertas-utama border border-dashed border-kertas-garisGelap">
+                        <p class="text-sm font-bold text-tinta-utama">Bon masih kosong</p>
+                        <p class="text-xs text-tinta-sekunder mt-1">Tekan "+ Tambah" pada daftar menu untuk mulai mencatat pesanan.</p>
+                    </div>
+                `;
+            } else {
+                itemsHTML = itemIds.map(id => {
+                    const item = menuData.find(m => m.id === id);
+                    const qty = cart[id];
+                    const subtotal = item.price * qty;
+                    totalQty += qty;
+                    totalPrice += subtotal;
+
+                    return `
+                        <div class="flex items-center justify-between gap-2 bg-kertas-utama p-2.5 border border-kertas-garis">
+                            <div class="min-w-0 flex-1">
+                                <p class="text-xs sm:text-sm font-bold text-tinta-utama truncate">${item.name}</p>
+                                <p class="text-xs text-tinta-sekunder tabular-harga">${formatRupiah(item.price)} x ${qty}</p>
+                            </div>
+                            <div class="flex items-center border border-tinta-utama shrink-0">
+                                <button type="button" onclick="updateCart('${id}', -1)" class="w-6 h-6 bg-kertas-kartu text-tinta-utama font-bold text-xs hover:bg-kertas-sekunder">-</button>
+                                <span class="text-xs font-bold w-6 text-center tabular-harga">${qty}</span>
+                                <button type="button" onclick="updateCart('${id}', 1)" class="w-6 h-6 bg-minang-cabai text-white font-bold text-xs hover:bg-minang-cabaiGelap">+</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            document.getElementById('desktop-cart-items').innerHTML = itemsHTML;
+            document.getElementById('drawer-cart-items').innerHTML = itemsHTML;
+
+            const formattedTotal = formatRupiah(totalPrice);
+            document.getElementById('desktop-cart-total').textContent = formattedTotal;
+            document.getElementById('drawer-cart-total').textContent = formattedTotal;
+
+            const navBadge = document.getElementById('nav-cart-badge');
+            const mobileBar = document.getElementById('mobile-floating-bar');
+            const mobileBarCount = document.getElementById('mobile-bar-count');
+            const mobileBarTotal = document.getElementById('mobile-bar-total');
+
+            if (totalQty > 0) {
+                navBadge.textContent = totalQty;
+                navBadge.classList.remove('hidden');
+                
+                mobileBarCount.textContent = `${totalQty} Porsi`;
+                mobileBarTotal.textContent = formattedTotal;
+                mobileBar.classList.remove('hidden');
+            } else {
+                navBadge.classList.add('hidden');
+                mobileBar.classList.add('hidden');
+            }
+        }
+
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-drawer-overlay');
+            const isClosed = drawer.classList.contains('translate-x-full');
+
+            if (isClosed) {
+                drawer.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        function sendOrderToWhatsApp(source) {
+            const itemIds = Object.keys(cart);
+            if (itemIds.length === 0) {
+                showToast('Pilih minimal 1 menu dulu ya!');
+                return;
+            }
+
+            const method = source === 'drawer' 
+                ? document.getElementById('drawer-order-method').value 
+                : document.getElementById('order-method').value;
+            const name = (source === 'drawer' 
+                ? document.getElementById('drawer-customer-name').value 
+                : document.getElementById('customer-name').value).trim();
+            const note = (source === 'drawer' 
+                ? document.getElementById('drawer-customer-note').value 
+                : document.getElementById('customer-note').value).trim();
+
+            let totalPrice = 0;
+            let orderLines = [];
+
+            itemIds.forEach((id, index) => {
+                const item = menuData.find(m => m.id === id);
+                const qty = cart[id];
+                const subtotal = item.price * qty;
+                totalPrice += subtotal;
+                orderLines.push(`${index + 1}. ${item.name} (${qty}x) = ${formatRupiah(subtotal)}`);
+            });
+
+            let message = `Halo *RM CAHAYA Masakan Padang - Sodong*\nSaya mau pesan menu berikut:\n\n`;
+            message += `*Pesanan:*\n${orderLines.join('\n')}\n\n`;
+            message += `*Total:* ${formatRupiah(totalPrice)}\n`;
+            message += `*Layanan:* ${method}\n`;
+            if (name) message += `*Nama:* ${name}\n`;
+            if (note) message += `*Catatan / Alamat:* ${note}\n`;
+            message += `\nMohon konfirmasinya ya. Terima kasih!`;
+
+            const waUrl = `https://wa.me/6282128325210?text=${encodeURIComponent(message)}`;
+            bukaTautanLuar(null, waUrl);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            renderMenu();
+            renderCart();
+        });
+    </script>
+</body>
+</html>
